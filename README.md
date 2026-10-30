@@ -1,41 +1,36 @@
-📊 Institutional Options Backtest Dashboard
+# Institutional Options Backtest Dashboard
 
-A professional-grade options backtesting engine built using Python and Streamlit, designed to simulate institutional-level options strategies with realistic cost modeling and advanced analytics.
+A professional-grade options backtesting engine built using Python and Streamlit, designed to simulate institutional-level ATM straddle strategies with realistic cost modeling and advanced analytics.
 
-🔥 Features
+## Features
 
-Gamma Scalping / Straddle / Volatility Strategies
+- **ATM Straddle / Volatility Mean-Reversion Strategy**
+- Realistic Indian brokerage cost model
+- 5-minute time-frame backtesting
+- Performance metrics (Sharpe, Drawdown, Win Rate)
+- Interactive Streamlit dashboard
+- Trade-level analytics
 
-Realistic Indian brokerage cost model
+## Tech Stack
 
-5-minute time-frame backtesting
+- Python
+- Pandas
+- NumPy
+- Plotly
+- Streamlit
 
-Performance metrics (Sharpe, Drawdown, CAGR)
-
-Interactive Streamlit dashboard
-
-Trade-level analytics
-
-🛠 Tech Stack
-
-Python
-
-Pandas
-
-NumPy
-
-Plotly
-
-Streamlit
-
-📈 Strategy Logic
+## Strategy Logic
 
 The system:
 
-Enters based on IV thresholds
+- Buys ATM straddles when IV percentile is low (cheap volatility)
+- Filters entries using spot momentum and EMA trend strength
+- Implements stop loss, take profit, IV-based exit, and time-based exit
+- Models realistic slippage and brokerage costs
 
-Uses delta hedging logic
+## How to Run
 
-Implements stop loss & take profit
-
-Models realistic slippage and brokerage
+```bash
+pip install -r requirements.txt
+streamlit run gmain.py
+```
